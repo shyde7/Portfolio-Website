@@ -133,20 +133,29 @@ a:active {
 .nameAndAbout {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content vertically */
+  justify-content: center;
   align-items: center;
   background: linear-gradient(
     135deg,
     #e0f7fa 0%,
     #e1bee7 100%
   ); /* Subtle background gradient */
-  color: #333; /* Darker text for contrast */
-  padding: 40px 220px; /* Padding for more spacing */
-  border-radius: 10px; /* Rounded corners for a smoother look */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-  margin: 20px auto; /* Center the section */
-  max-width: 1200px; /* Restrict maximum width for better readability */
-  transition: 5s ease;
+  color: #333;
+  
+  /* Remove or reduce max-width to extend closer to full width */
+  max-width: 95%; /* Make it 95% of the viewport width, adjust as needed */
+  
+  /* Reduce padding for a better fit */
+  padding: 40px 40px; /* Reduced left/right padding */
+
+  /* Optional: Remove margin auto to let the section naturally extend */
+  margin: 20px 0; /* Remove auto to avoid center restriction */
+
+  border-radius: 10px; /* Keep rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Keep shadow for depth */
+  
+  /* Optional: Ensure smooth transition when the screen size changes */
+  transition: width 0.3s ease-in-out;
 }
 
 /* Name section styling */
