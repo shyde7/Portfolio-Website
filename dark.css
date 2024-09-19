@@ -173,14 +173,6 @@ body.dark-mode .social-inner span {
   color: #ffffff !important; /* Force color for footer text */
 }
 
-body.dark-mode .social-container .col:hover {
-  border: 2px solid #bb86fc !important; /* Hover border color */
-  text-decoration: none;
-}
-
-body.dark-mode .social-container {
-  display: flex;
-  justify-content: space-around;
-  padding: 20px 0;
-  background-color: #1e1e1e;
+body.dark-mode .social-inner a:hover {
+  color: #bb86fc !important; /* Hover color */
 }
