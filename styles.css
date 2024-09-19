@@ -14,8 +14,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Full height of the viewport */
-  margin 0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   padding-top: 70px; /* Adjusted padding for the fixed nav bar */
   font-family: "Roboto", sans-serif;
 }
@@ -26,7 +26,6 @@ main {
   flex-direction: column;
   justify-content: flex-start;
 }
-
 
 footer {
   margin-top: auto; /* Push the footer to the bottom of the page */
@@ -141,10 +140,10 @@ a:active {
     #e1bee7 100%
   ); /* Subtle background gradient */
   color: #333;
-  
+
   /* Remove or reduce max-width to extend closer to full width */
   max-width: 95%; /* Make it 95% of the viewport width, adjust as needed */
-  
+
   /* Reduce padding for a better fit */
   padding: 40px 40px; /* Reduced left/right padding */
 
@@ -154,9 +153,13 @@ a:active {
 
   border-radius: 10px; /* Keep rounded corners */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Keep shadow for depth */
-  
+
   /* Optional: Ensure smooth transition when the screen size changes */
   transition: width 0.3s ease-in-out;
+}
+
+.invisible {
+  display: none;
 }
 
 /* Name section styling */
