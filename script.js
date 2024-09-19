@@ -64,18 +64,28 @@ document.addEventListener("DOMContentLoaded", () => {
   // Window Size Easter Egg
   const checkWindowSize = () => {
     const easterEgg = document.querySelector(".easterEgg");
+
     if (easterEgg) {
-      if (window.innerWidth <= 700) {
-        easterEgg.textContent = "Testing the responsiveness? Gotcha!";
-      } else {
-        easterEgg.textContent = "";
+      const isMobile = window.innerWidth <= 700;
+
+      // Only trigger Easter egg on window resize, not initial mobile load
+      if (!isMobile) {
+        window.addEventListener("resize", () => {
+          if (window.innerWidth <= 700) {
+            easterEgg.textContent = "Testing the responsiveness? Gotcha!";
+          } else {
+            easterEgg.textContent = "";
+          }
+        });
       }
     }
   };
 
-  // Event Listeners for Window Resize and Initial Load
+  // Initialize on load
+  window.addEventListener("load", checkWindowSize);
+
+  // Intialize on resize
   window.addEventListener("resize", checkWindowSize);
-  checkWindowSize(); // Check window size on load
 
   // Initialize Email Hover Effect
   changeEmailToTextOnHover();
