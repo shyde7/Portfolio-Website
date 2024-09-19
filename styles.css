@@ -2,6 +2,7 @@
 html,
 body {
   height: 100%;
+  margin: 0;
 }
 
 html {
@@ -12,7 +13,8 @@ body {
   margin: 0;
   padding-top: 70px; /* Adjusted padding for the fixed nav bar */
   background-color: #ffffff;
-  font-family: Arial, sans-serif; /* Example font */
+  /*roboto font*/
+  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
 }
