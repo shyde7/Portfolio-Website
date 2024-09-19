@@ -600,6 +600,12 @@ a:active {
   text-transform: uppercase;
 }
 
+.col-md-4 {
+  flex: 1 1 300px; /* Ensures the contact column takes up available space */
+  padding: 0 20px; /* Add light padding for inner content */
+  max-width: 400px; /* Restrict the max width for better readability */
+}
+
 .social-inner span {
   margin-top: 5px;
 }
