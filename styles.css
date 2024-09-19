@@ -190,6 +190,13 @@ a:active {
   color: #666; /* Lighter text color */
 }
 
+.easterEgg {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-align: center; /* Center align the summary */
+  color: #666; /* Lighter text color */
+}
+
 /* Styling for the About Me section */
 .about {
   display: flex;
