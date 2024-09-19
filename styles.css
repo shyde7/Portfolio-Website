@@ -534,7 +534,7 @@ a:active {
 .footer-classic {
   width: 100%;
   background-color: #0c66e4;
-  padding: 40px 0;
+  padding: 40px 0; /* Padding for the top and bottom of the footer */
   color: rgba(255, 255, 255, 0.8);
   position: relative;
   bottom: 0;
@@ -546,8 +546,17 @@ a:active {
   justify-content: flex-start; /* Align content to the left */
   align-items: flex-start; /* Align items to the top */
   flex-wrap: wrap;
-  padding: 0 40px; /* Add padding for spacing */
+  padding: 0; /* Remove extra padding */
+  margin: 0; /* Remove margins */
+  width: 100%; /* Ensure it takes full width */
+  max-width: 1200px; /* Center content in a maximum width */
   box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.col-md-4 {
+  flex: 1 1 300px; /* Ensures the contact column takes up available space */
+  padding: 0 20px; /* Add light padding for inner content */
+  max-width: 400px; /* Restrict the max width for better readability */
 }
 
 .contact-list {
