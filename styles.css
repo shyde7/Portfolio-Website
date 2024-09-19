@@ -11,21 +11,22 @@ html {
 }
 
 body {
-  margin: 0;
-  padding-top: 70px; /* Adjusted padding for the fixed nav bar */
-  background-color: #ffffff;
-  /*roboto font*/
-  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
+  min-height: 100vh; /* Full height of the viewport */
+  margin 0;
+  padding:0;
+  padding-top: 70px; /* Adjusted padding for the fixed nav bar */
+  font-family: "Roboto", sans-serif;
 }
 
 main {
   flex-grow: 1; /* Let main grow to fill remaining space */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Avoid stretching content in main */
+  justify-content: flex-start;
 }
+
 
 footer {
   margin-top: auto; /* Push the footer to the bottom of the page */
@@ -235,7 +236,6 @@ a:active {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  height: 100%;
 }
 
 .section-title {
