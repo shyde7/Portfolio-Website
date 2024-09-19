@@ -3,6 +3,7 @@ html,
 body {
   height: 100%;
   margin: 0;
+  padding: 0;
 }
 
 html {
@@ -24,6 +25,12 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Avoid stretching content in main */
+}
+
+footer {
+  margin-top: auto; /* Push the footer to the bottom of the page */
+  width: 100%;
+  background-color: #0c66e4;
 }
 
 /* Turning off visited links for all links*/
