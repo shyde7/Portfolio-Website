@@ -530,11 +530,11 @@ a:active {
   margin-top: auto; /* Push the footer to the bottom of the page */
 }
 
-/* Footer section */
+/* Footer layout */
 .footer-classic {
   width: 100%;
   background-color: #0c66e4;
-  padding: 40px 0; /* Padding for the top and bottom of the footer */
+  padding: 40px 0;
   color: rgba(255, 255, 255, 0.8);
   position: relative;
   bottom: 0;
@@ -543,26 +543,31 @@ a:active {
 
 .container {
   display: flex;
-  justify-content: flex-start; /* Align content to the left */
-  align-items: flex-start; /* Align items to the top */
+  justify-content: center;
+  align-items: flex-start;
   flex-wrap: wrap;
-  padding: 0; /* Remove extra padding */
-  right: 80px;
-  margin: 0; /* Remove margins */
-  width: 100%; /* Ensure it takes full width */
-  max-width: 1200px; /* Center content in a maximum width */
-  box-sizing: border-box; /* Ensure padding is included in the width */
+  width: 100%;
+  max-width: 1200px;
 }
 
-.col-md-4 {
-  flex: 1 1 300px; /* Ensures the contact column takes up available space */
-  padding: 0 20px; /* Add light padding for inner content */
-  max-width: 400px; /* Restrict the max width for better readability */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.contact-list {
-  padding: 0;
-  margin: 0;
+.contact-section {
+  flex: 1;
+  max-width: 500px;
+  padding: 0 20px;
+}
+
+.social-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  padding: 0 20px;
 }
 
 .contact-list dt,
@@ -581,66 +586,44 @@ a:active {
   text-decoration: underline;
 }
 
-/* Adjust social container spacing */
-.social-container {
-  display: flex;
-  justify-content: space-around;
-  padding: 20px 0;
-  background-color: #0c66e4;
-  flex-wrap: wrap;
-}
-
 .social-inner {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  padding: 10px;
+  padding: 10px 0;
   color: white;
   font-size: 18px;
   text-transform: uppercase;
 }
 
-.col-md-4 {
-  /*move the column from the right to the left 100 px */
-  right: 100px;
-}
-
 .social-inner span {
-  margin-top: 5px;
+  margin-left: 10px;
 }
 
 .social-inner .icon {
   font-size: 24px;
-  margin-bottom: 10px;
 }
 
-.social-container .col {
-  max-width: 100px;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
-  transition: 0.5s ease-in-out;
-}
-
-.social-container .col:hover {
-  border: 2px solid white;
+.social-inner:hover {
+  color: #ffffff;
 }
 
 .btn {
   display: inline-block;
-  padding: 2px 4px;
+  padding: 10px 20px;
   font-size: 16px;
-  right: 4px;
   color: white;
-  background-color: #0c66e4;
+  background-color: #084298;
   text-align: center;
   border: none;
   border-radius: 5px;
   text-decoration: none;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .btn:hover {
-  background-color: #084298; /* Darker blue on hover */
+  background-color: #0c66e4; /* Darker blue on hover */
 }
 
 /* Media query for responsiveness */
