@@ -547,6 +547,7 @@ a:active {
   align-items: flex-start; /* Align items to the top */
   flex-wrap: wrap;
   padding: 0; /* Remove extra padding */
+  right: 80px;
   margin: 0; /* Remove margins */
   width: 100%; /* Ensure it takes full width */
   max-width: 1200px; /* Center content in a maximum width */

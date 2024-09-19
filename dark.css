@@ -6,6 +6,19 @@ body.dark-mode {
   color: #ffffff;
 }
 
+body.dark-mode a:link {
+  text-decoration: none;
+}
+body.dark-mode a:visited {
+  text-decoration: none;
+}
+body.dark-mode a:hover {
+  text-decoration: none;
+}
+body.dark-mode a:active {
+  text-decoration: none;
+}
+
 /* Navigation Bar */
 body.dark-mode .nav {
   background-color: #1e1e1e;
@@ -162,6 +175,7 @@ body.dark-mode .social-inner span {
 
 body.dark-mode .social-container .col:hover {
   border: 2px solid #bb86fc !important; /* Hover border color */
+  text-decoration: none;
 }
 
 body.dark-mode .social-container {
