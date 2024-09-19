@@ -539,53 +539,45 @@ a:active {
   position: relative;
   bottom: 0;
   left: 0;
-  padding-top: 0;
 }
+
 .container {
-  padding-left: 60px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start; /* Align content to the left */
+  align-items: flex-start; /* Align items to the top */
   flex-wrap: wrap;
+  padding: 0 40px; /* Add padding for spacing */
+  box-sizing: border-box; /* Ensure padding is included in the width */
 }
-.contact-list dt {
+
+.contact-list {
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list dt,
+.contact-list dd {
   font-weight: bold;
   color: white;
+  margin-bottom: 10px;
 }
 
-.contact-list dd {
-  margin: 0 0 10px;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.contact-list a {
+.contact-list dd a {
   color: white;
   text-decoration: none;
 }
 
-.contact-list a:hover {
+.contact-list dd a:hover {
   text-decoration: underline;
 }
 
-.nav-list2 li {
-  padding: 5px 0;
-}
-
-.nav-list2 li a {
-  color: white;
-  text-decoration: none;
-}
-
-.nav-list2 li a:hover {
-  color: #4d6de6;
-  transition: color 0.3s ease;
-}
-
+/* Adjust social container spacing */
 .social-container {
   display: flex;
   justify-content: space-around;
   padding: 20px 0;
   background-color: #0c66e4;
+  flex-wrap: wrap;
 }
 
 .social-inner {
@@ -596,7 +588,6 @@ a:active {
   color: white;
   font-size: 18px;
   text-transform: uppercase;
-  text-decoration: none;
 }
 
 .social-inner span {

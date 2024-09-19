@@ -162,7 +162,6 @@ body.dark-mode .social-inner span {
 
 body.dark-mode .social-container .col:hover {
   border: 2px solid #bb86fc !important; /* Hover border color */
-  scale: 1.1;
 }
 
 body.dark-mode .social-container {
