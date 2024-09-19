@@ -149,7 +149,7 @@ a:active {
   padding: 40px 40px; /* Reduced left/right padding */
 
   /* Optional: Remove margin auto to let the section naturally extend */
-  margin: 20px 0; /* Remove auto to avoid center restriction */
+  margin: 20px auto; /* Remove auto to avoid center restriction */
 
   border-radius: 10px; /* Keep rounded corners */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Keep shadow for depth */
