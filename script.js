@@ -63,12 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Window Size Easter Egg
   const checkWindowSize = () => {
-    const profSummary = document.querySelector(".profSummary");
-    if (profSummary) {
+    const easterEgg = document.querySelector(".easterEgg");
+    if (easterEgg) {
       if (window.innerWidth <= 700) {
-        profSummary.textContent = "Testing the responsiveness? Gotcha!";
+        easterEgg.textContent = "Testing the responsiveness? Gotcha!";
       } else {
-        profSummary.textContent = "I'm an aspiring software developer intern!";
+        easterEgg.textContent = "";
       }
     }
   };
