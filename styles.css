@@ -1,30 +1,660 @@
+/* Basic body styling */
+html,
+body {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  padding: 0;
+  padding-top: 70px; /* Adjusted padding for the fixed nav bar */
   background-color: #ffffff;
-  opacity: 0.6;
-  background-image: radial-gradient(#0047ff 0.5px, #ffffff 0.5px);
-  background-size: 10px 10px;
+  font-family: Arial, sans-serif; /* Example font */
+  display: flex;
+  flex-direction: column;
 }
 
-nav {
-  width: 100%;
-  background-color: #333;
+main {
+  flex-grow: 1; /* Let main grow to fill remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Avoid stretching content in main */
+}
+
+/* Turning off visited links for all links*/
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+
+.project-title:visited {
+  text-decoration: none;
+}
+
+.project-title:hover {
+  text-decoration: underline;
+  scale: 1.1;
+}
+
+.section-title h6:hover {
+  text-decoration: underline;
+  scale: 1.1;
+}
+
+/* Navigation bar styling (fixed at top of the screen) */
+.nav {
+  display: flex;
+  justify-content: space-between; /* Already set to space-between */
+  align-items: center;
+  background-color: transparent;
+  -webkit-box-shadow: 0 8px 6px -6px #333; /* Add shadow for depth */
+  -moz-box-shadow: 0 8px 6px -6px #333;
+  box-shadow: 0 8px 6px -6px #333;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: white;
-  text-align: center;
-  padding: 10px;
   position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 20px;
+  z-index: 1000;
+  box-sizing: border-box; /* Ensure padding is included in width calculations */
 }
 
-.nav-left {
-  float: left;
-}
-
+/* Add equal space between the left and right sections */
+.nav-left,
 .nav-right {
-  float: right;
-}
-
-nav ul {
+  display: flex;
   list-style-type: none;
   padding: 0;
+  margin: 0;
+  flex: 1; /* Ensure both left and right take equal space */
+}
+
+/* Add more margin to ensure proper spacing */
+.nav-left li,
+.nav-right li {
+  margin: 0 15px; /* Add more space between each nav item */
+}
+
+/* Ensure the dark mode button has sufficient space */
+.nav-link {
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Make sure the links fit and don't overflow */
+.nav-right {
+  justify-content: flex-end; /* Align right items properly */
+  flex-shrink: 1; /* Allow the right side to shrink */
+}
+/* Styling for anchor tags in nav */
+.nav-link a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Hover effect for nav items */
+.nav-link a:hover {
+  color: #0c66e4; /* Change the color on hover */
+  transition: color 0.3s ease;
+}
+
+#email2 a {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+
+#email2 a.fade-out {
+  opacity: 0; /* Fade out */
+}
+
+/* Styling for the overall nameAndAbout section */
+.nameAndAbout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    #e0f7fa 0%,
+    #e1bee7 100%
+  ); /* Subtle background gradient */
+  color: #333; /* Darker text for contrast */
+  padding: 40px 220px; /* Padding for more spacing */
+  border-radius: 10px; /* Rounded corners for a smoother look */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  margin: 20px auto; /* Center the section */
+  max-width: 1200px; /* Restrict maximum width for better readability */
+  transition: 5s ease;
+}
+
+/* Name section styling */
+.name {
+  text-align: center;
+  font-size: 4.5rem; /* Increase font size */
+  font-weight: bold; /* Make it bold for better emphasis */
+  margin: 0;
+  color: black; /* Accent color */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.name:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.name-color {
+  color: #0c66e4; /* Customize the color */
+  font-size: 6rem;
+}
+
+/* Professional summary */
+.profSummary {
+  font-size: 2.2rem;
+  font-weight: 300;
+  text-align: center; /* Center align the summary */
+  color: #666; /* Lighter text color */
+}
+
+/* Styling for the About Me section */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white; /* Contrast background */
+  padding: 30px;
+  margin: 30px 0;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  max-width: 1000px; /* Limit width */
+}
+
+.about-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.about-info {
+  font-size: 1.5rem;
+  color: #555;
+  line-height: 1.8;
+  text-align: center;
+  padding: 0 15px;
+  max-width: 900px;
+}
+
+.about-info:hover {
+  color: #0c66e4; /* Change the color on hover */
+  transition: color 0.3s ease;
+  cursor: text;
+}
+
+/* Add some animations for entry */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nameAndAbout {
+  animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+}
+
+/* Projects section */
+.projects {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100%;
+}
+
+.section-title {
+  font-size: 2rem; /* Adjust size as needed */
+  font-weight: bold;
+  color: #0c66e4; /* Primary blue color */
+  margin: 40px 0 20px; /* Ensure enough space above and below the title */
+  text-align: center;
+  padding-top: 40px;
+  z-index: 1; /* Ensure the title stays visible over other elements */
+}
+
+/* Individual project card */
+.project {
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  max-width: 400px;
+  height: 600px;
+  background-color: #ffffff; /* White background for a clean look */
+  text-align: center;
+}
+
+/* Hover effect for project cards */
+.project:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05); /* Smooth scaling effect */
+}
+
+/* Project title */
+.project-title {
+  font-size: 1.8rem;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #0c66e4; /* Use your primary blue color */
+}
+
+/* Project description */
+.project-info {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+/* Project images */
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for images */
+.project:hover .project-image {
+  transform: scale(1.05); /* Smooth zoom effect on hover */
+}
+
+/* Fixed Contact Navigation on the Bottom Left */
+.contact-nav-left-fixed {
+  position: fixed;
+  bottom: 6%; /* Adjust this value to move it higher/lower */
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: auto;
+  height: auto; /* Ensures it only takes the space of its content */
+  background-color: transparent; /* No background */
+  z-index: 999; /* Ensure it is layered above other content */
+}
+
+/* Contact list styling */
+.contact-list1 {
+  list-style: none; /* Remove bullets */
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual contact list items */
+.contact-link1 {
+  margin: 10px 0;
+}
+
+/* Contact icon styling */
+.linkIcon {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: black; /* Ensure the icon color is black */
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+/* Hover effect for icons */
+.linkIcon:hover {
+  color: #0073b1; /* Change color to blue on hover */
+  text-decoration: none; /* Ensure no underline */
+}
+
+.contact-link1:hover {
+  scale: 1.25;
+}
+
+/* Ensures the icons align properly */
+.contact-link1 i {
+  font-size: 24px;
+  color: black; /* Explicitly setting black color for icons */
+  transition: ease-in-out 0.15s;
+}
+
+/* Hover effect for icons */
+.contact-link1 i:hover {
+  color: #084298; /* Change color to blue on hover */
+}
+
+.skills-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Wrap skills if they don't fit in one line */
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual skill item styling */
+.skills-list-item {
+  background-color: #f0f0f0; /* Light grey background for contrast */
+  color: #333; /* Darker text for readability */
+  padding: 10px 15px;
+  margin: 10px;
+  border-radius: 8px; /* Rounded corners */
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Hover effect for skills */
+.skills-list-item:hover {
+  background-color: #0c66e4; /* Change to primary blue on hover */
+  color: #fff; /* White text on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.education-cards-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to the next line on smaller screens */
+  justify-content: space-around; /* Spreads the cards evenly across the container */
+  align-items: flex-start; /* Aligns cards at the top */
+  margin-top: 20px; /* Add some space between the title and the cards */
+}
+
+/* Individual education card */
+.education-card {
+  flex: 1 1 300px; /* Cards will take up equal space, with a minimum width of 300px */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 20px;
+  margin: 20px;
+  max-width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+/* Hover effect for education card */
+.education-card:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+/* Education image */
+.education-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 15px;
+}
+
+/* Education info styling */
+.education-info {
+  color: #333;
+}
+
+.education-school {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0c66e4;
+  margin-bottom: 10px;
+}
+
+.education-info p {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 5px 0;
+}
+/* Relevant Coursework section */
+.relevant-coursework {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  margin: 20px 0;
+  padding-left: 0; /* Remove padding */
+  padding-bottom: 40px;
+}
+
+.coursework {
+  padding-left: 0px; /* Add a little padding to indent coursework list */
+  list-style: none;
+  margin-bottom: 10px;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.coursework-item {
+  /* centered on the page */
+  width: 100%;
+  list-style: none;
+  font-size: 1.1rem;
+  color: #555; /* Slightly lighter text for coursework */
+  background-color: #f9f9f9; /* Light grey background for each item */
+  padding: 8px 12px;
+  margin: 5px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover effect for coursework items */
+.coursework-item:hover {
+  background-color: #0c66e4; /* Change to primary blue on hover */
+  color: white; /* White text on hover */
+  transform: scale(1.02); /* Slight scaling effect */
+}
+
+.dark-mode-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  color: #000; /* Default color */
+  font-size: 24px;
+  top: -40px;
+}
+
+.dark-mode-button .material-icons {
+  vertical-align: middle;
+  top: -40px;
+}
+
+.dark-mode-button:hover {
+  color: #0c66e4; /* Hover color */
+}
+
+/* Adjust positioning if necessary */
+/* Adjust positioning if necessary */
+.nav-right .dark-mode-button,
+.nav-left .dark-mode-button {
+  position: relative;
+  top: -8px;
+}
+
+.footer {
+  margin-top: auto; /* Push the footer to the bottom of the page */
+}
+
+/* Footer section */
+.footer-classic {
+  width: 100%;
+  background-color: #0c66e4;
+  padding: 40px 0;
+  color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  bottom: 0;
+  left: 0;
+  padding-top: 0;
+}
+.container {
+  padding-left: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.contact-list dt {
+  font-weight: bold;
+  color: white;
+}
+
+.contact-list dd {
+  margin: 0 0 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-list a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+.nav-list2 li {
+  padding: 5px 0;
+}
+
+.nav-list2 li a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-list2 li a:hover {
+  color: #4d6de6;
+  transition: color 0.3s ease;
+}
+
+.social-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  background-color: #0c66e4;
+}
+
+.social-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.social-inner span {
+  margin-top: 5px;
+}
+
+.social-inner .icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.social-container .col {
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  transition: 0.5s ease-in-out;
+}
+
+.social-container .col:hover {
+  border: 2px solid white;
+  scale: 1.1;
+}
+
+.btn {
+  display: inline-block;
+  padding: 2px 4px;
+  font-size: 16px;
+  right: 4px;
+  color: white;
+  background-color: #0c66e4;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #084298; /* Darker blue on hover */
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  .projects {
+    flex-direction: column;
+  }
+
+  .project {
+    max-width: 100%;
+  }
+
+  .name {
+    font-size: 3rem;
+  }
+
+  .profSummary {
+    font-size: 1.5rem;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-info {
+    font-size: 1.2rem;
+  }
+
+  .project-image {
+    height: 150px;
+  }
+
+  .education-info {
+    font-size: 1rem;
+  }
+
+  .education-card {
+    max-width: 100%;
+  }
+
+  .social-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }

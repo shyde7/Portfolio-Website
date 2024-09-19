@@ -1,0 +1,173 @@
+/* Dark Mode Styles */
+
+/* When body has class 'dark-mode', these styles apply */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Navigation Bar */
+body.dark-mode .nav {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .nav-link a {
+  color: #ffffff;
+}
+
+body.dark-mode .about-info:hover {
+  color: #bb86fc;
+}
+
+body.dark-mode .nav-link a:hover {
+  color: #bb86fc;
+}
+
+/* Main Sections */
+body.dark-mode .nameAndAbout {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 100%);
+}
+
+body.dark-mode .name {
+  color: #ffffff;
+}
+
+body.dark-mode .name-color {
+  color: #bb86fc;
+}
+
+body.dark-mode .about {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .about-title,
+body.dark-mode .about-info {
+  color: #ffffff;
+}
+
+body.dark-mode .section-title {
+  color: #bb86fc;
+}
+
+/* Projects Section */
+body.dark-mode .project {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark-mode .project-title {
+  color: #bb86fc;
+}
+
+body.dark-mode .project-info {
+  color: #e0e0e0;
+}
+
+/* Skills List */
+body.dark-mode .skills-list-item {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+body.dark-mode .skills-list-item:hover {
+  background-color: #bb86fc;
+}
+
+/* Education Section */
+body.dark-mode .education-card {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+body.dark-mode .education-school {
+  color: #bb86fc;
+}
+
+/* Relevant Coursework */
+body.dark-mode .coursework-item {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* Dark Mode Button */
+body.dark-mode .dark-mode-button {
+  color: #ffffff;
+}
+
+body.dark-mode .dark-mode-button:hover {
+  color: #bb86fc;
+}
+
+/* Change button color in dark mode */
+
+body.dark-mode .dark-mode-button {
+  color: #ffffff;
+}
+
+body.dark-mode .contact-link1 i {
+  transition: ease-in-out 0.15s;
+  color: #ffffff;
+}
+
+body.dark-mode .contact-link1 i:hover {
+  color: #bb86fc;
+}
+
+body.dark-mode .dark-mode-button:hover {
+  color: #bb86fc;
+}
+
+body.dark-mode .project-image {
+  filter: brightness(0.8);
+}
+
+body.dark-mode .linkIcon {
+  color: #ffffff;
+}
+
+body.dark-mode .linkIcon:hover {
+  color: #bb86fc;
+}
+
+body.dark-mode .coursework-item:hover {
+  background-color: #bb86fc;
+}
+
+/* Ensure footer background color changes in dark mode */
+body.dark-mode footer {
+  background-color: #1e1e1e !important; /* Force change with important */
+  color: #ffffff !important; /* Light text color */
+}
+
+body.dark-mode .footer-classic {
+  background-color: #1e1e1e !important; /* Ensure footer-classic background changes */
+  color: #ffffff !important; /* Force the text color change */
+}
+
+body.dark-mode .footer-classic a {
+  color: #ffffff !important; /* Ensure link color changes */
+}
+
+body.dark-mode .footer-classic a:hover {
+  color: #bb86fc !important; /* Hover color */
+}
+
+body.dark-mode .social-inner a {
+  color: #ffffff !important; /* Force color for footer icons */
+}
+
+body.dark-mode .social-inner span {
+  color: #ffffff !important; /* Force color for footer text */
+}
+
+body.dark-mode .social-container .col:hover {
+  border: 2px solid #bb86fc !important; /* Hover border color */
+  scale: 1.1;
+}
+
+body.dark-mode .social-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  background-color: #1e1e1e;
+}
