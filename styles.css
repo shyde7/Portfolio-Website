@@ -150,7 +150,7 @@ a:active {
 
   /* Optional: Remove margin auto to let the section naturally extend */
   margin: 20px auto; /* Remove auto to avoid center restriction */
-  margin-top: 20px; /* Add top margin for spacing */
+  margin-top: 40px; /* Add top margin for spacing */
 
   border-radius: 10px; /* Keep rounded corners */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Keep shadow for depth */
