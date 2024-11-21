@@ -1,7 +1,8 @@
-import { trackEvent } from "@vercel/analytics";
+console.log("Script is loaded and running!");
 
 // Ensure the DOM is fully loaded before running any code
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM is fully loaded");
   // Dark Mode Toggle
   const toggleButton = document.getElementById("dark-mode-toggle");
 
@@ -33,6 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.error("Dark mode toggle button not found");
   }
+
+  document.body.style.backgroundColor = "red";
 
   // Email Hover Effect
   const changeEmailToTextOnHover = () => {
