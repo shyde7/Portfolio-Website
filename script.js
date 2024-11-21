@@ -1,7 +1,16 @@
-console.log("Script is loaded and running!");
-
+try{
+  const trackEvent = await import("@vercel/analytics");
+} catch (error) {
+  console.error("Error importing trackEvent", error);
+}
 // Ensure the DOM is fully loaded before running any code
 document.addEventListener("DOMContentLoaded", () => {
+  trackEvent("site_access", {
+    path: window.location.pathname,
+    referrer: document.referrer,
+    timestamp: new Date().toISOString(),
+  })
+
   console.log("DOM is fully loaded");
   // Dark Mode Toggle
   const toggleButton = document.getElementById("dark-mode-toggle");
