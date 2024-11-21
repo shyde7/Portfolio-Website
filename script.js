@@ -5,40 +5,38 @@ document.addEventListener("DOMContentLoaded", () => {
   // Track a page view event
   trackEvent("page_view", { path: window.location.pathname });
 
-  // Dark Mode Toggle
-  const toggleButton = document.getElementById("dark-mode-toggle");
+ // Dark Mode Toggle
+ const toggleButton = document.getElementById("dark-mode-toggle");
 
-  // Check if the toggle button exists
-  if (toggleButton) {
-    // Check for saved user preference in localStorage
-    const currentTheme = localStorage.getItem("theme");
-    if (currentTheme === "dark") {
-      document.body.classList.add("dark-mode");
-    }
+ // Check if the toggle button exists
+ if (toggleButton) {
+   // Check for saved user preference in localStorage
+   const currentTheme = localStorage.getItem("theme");
 
-    // Toggle dark mode on button click
-    toggleButton.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
+   if (currentTheme === "dark") {
+     document.body.classList.add("dark-mode");
+   } else {
+     document.body.classList.remove("dark-mode");
+   }
 
-      // Change the logo based on the theme
-      const liftrytePic = document.getElementById("LRPic");
-      if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-      } else {
-        localStorage.setItem("theme", "light");
+   // Toggle dark mode on button click
+   toggleButton.addEventListener("click", () => {
+     const isDarkMode = document.body.classList.toggle("dark-mode");
 
-        const newTheme = document.body.classList.contains("dark-mode")
-        ? "dark"
-        : "light";
+     // Save user preference in localStorage
+     localStorage.setItem("theme", isDarkMode ? "dark" : "light");
 
-        // Track the theme change event
-        trackEvent("theme_change", { theme: newTheme });
-
-      }
-    });
-  } else {
-    console.error("Dark mode toggle button not found");
-  }
+     // Change the logo based on the theme
+     const liftrytePic = document.getElementById("LRPic");
+     if (liftrytePic) {
+       liftrytePic.src = isDarkMode
+         ? "images/white-wordmark.png"
+         : "images/wordmark.png";
+     }
+   });
+ } else {
+   console.error("Dark mode toggle button not found");
+ }
 
   // Email Hover Effect
   const changeEmailToTextOnHover = () => {
