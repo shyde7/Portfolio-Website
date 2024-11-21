@@ -22,20 +22,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Change the logo based on the theme
       const liftrytePic = document.getElementById("LRPic");
-      if (liftrytePic) {
-        liftrytePic.src = document.body.classList.contains("dark-mode")
-          ? "images/white-wordmark.png"
-          : "images/wordmark.png";
-      }
+      if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
 
-      // Save user preference in localStorage
-      const newTheme = document.body.classList.contains("dark-mode")
+        const newTheme = document.body.classList.contains("dark-mode")
         ? "dark"
         : "light";
-      localStorage.setItem("theme", newTheme);
 
-      // Track the dark mode toggle event
-      trackEvent("dark_mode_toggled", { newTheme });
+        // Track the theme change event
+        trackEvent("theme_change", { theme: newTheme });
+
+      }
     });
   } else {
     console.error("Dark mode toggle button not found");
