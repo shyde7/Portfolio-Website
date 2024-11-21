@@ -1,8 +1,11 @@
+const getTrackEvent = async () => {
+
 try{
   const trackEvent = await import("@vercel/analytics");
 } catch (error) {
   console.error("Error importing trackEvent", error);
 }
+};
 // Ensure the DOM is fully loaded before running any code
 document.addEventListener("DOMContentLoaded", () => {
   trackEvent("site_access", {
