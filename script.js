@@ -2,41 +2,39 @@ import { trackEvent } from "@vercel/analytics";
 
 // Ensure the DOM is fully loaded before running any code
 document.addEventListener("DOMContentLoaded", () => {
-  // Track a page view event
-  trackEvent("page_view", { path: window.location.pathname });
+  // Dark Mode Toggle
+  const toggleButton = document.getElementById("dark-mode-toggle");
 
- // Dark Mode Toggle
- const toggleButton = document.getElementById("dark-mode-toggle");
+  // Check if the toggle button exists
+  if (toggleButton) {
+    // Check for saved user preference in localStorage
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme === "dark") {
+      document.body.classList.add("dark-mode");
+    }
 
- // Check if the toggle button exists
- if (toggleButton) {
-   // Check for saved user preference in localStorage
-   const currentTheme = localStorage.getItem("theme");
+    // Toggle dark mode on button click
+    toggleButton.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
 
-   if (currentTheme === "dark") {
-     document.body.classList.add("dark-mode");
-   } else {
-     document.body.classList.remove("dark-mode");
-   }
+      // Change the logo based on the theme
+      const liftrytePic = document.getElementById("LRPic");
+      if (liftrytePic) {
+        liftrytePic.src = document.body.classList.contains("dark-mode")
+          ? "images/white-wordmark.png"
+          : "images/wordmark.png";
+      }
 
-   // Toggle dark mode on button click
-   toggleButton.addEventListener("click", () => {
-     const isDarkMode = document.body.classList.toggle("dark-mode");
-
-     // Save user preference in localStorage
-     localStorage.setItem("theme", isDarkMode ? "dark" : "light");
-
-     // Change the logo based on the theme
-     const liftrytePic = document.getElementById("LRPic");
-     if (liftrytePic) {
-       liftrytePic.src = isDarkMode
-         ? "images/white-wordmark.png"
-         : "images/wordmark.png";
-     }
-   });
- } else {
-   console.error("Dark mode toggle button not found");
- }
+      // Save user preference in localStorage
+      if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
+    });
+  } else {
+    console.error("Dark mode toggle button not found");
+  }
 
   // Email Hover Effect
   const changeEmailToTextOnHover = () => {
@@ -49,9 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
           emailLink.textContent = "shyde04.contact@gmail.com";
           emailLink.href = "mailto:shyde04.contact@gmail.com";
           emailLink.classList.remove("fade-out");
-
-          // Track the email hover event
-          trackEvent("email_hover", { action: "show_email" });
         }, 300);
       });
 
@@ -61,9 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
           emailLink.textContent = "Email";
           emailLink.href = "#";
           emailLink.classList.remove("fade-out");
-
-          // Track the email hover event
-          trackEvent("email_hover", { action: "hide_email" });
         }, 300);
       });
     } else {
@@ -83,10 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
         window.addEventListener("resize", () => {
           if (window.innerWidth <= 700) {
             easterEgg.textContent = "Testing the responsiveness? Gotcha!";
-            trackEvent("easter_egg_triggered", { size: "mobile" });
           } else {
             easterEgg.textContent = "";
-            trackEvent("easter_egg_triggered", { size: "desktop" });
           }
         });
       }
@@ -96,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize on load
   window.addEventListener("load", checkWindowSize);
 
-  // Initialize on resize
+  // Intialize on resize
   window.addEventListener("resize", checkWindowSize);
 
   // Initialize Email Hover Effect
