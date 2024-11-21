@@ -2,7 +2,7 @@
 
 /* When body has class 'dark-mode', these styles apply */
 body.dark-mode {
-  background-color: #121212;
+  background-color: #121212 !important;
   color: #ffffff;
 }
 

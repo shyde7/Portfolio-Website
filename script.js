@@ -5,31 +5,29 @@ document.addEventListener("DOMContentLoaded", () => {
   // Dark Mode Toggle
   const toggleButton = document.getElementById("dark-mode-toggle");
 
-  // Check if the toggle button exists
   if (toggleButton) {
     // Check for saved user preference in localStorage
     const currentTheme = localStorage.getItem("theme");
     if (currentTheme === "dark") {
+      console.log("Applying saved dark mode");
       document.body.classList.add("dark-mode");
     }
 
     // Toggle dark mode on button click
     toggleButton.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
+      console.log("Dark mode button clicked");
+      const isDarkMode = document.body.classList.toggle("dark-mode");
+      console.log("Dark mode active:", isDarkMode);
+
+      // Save user preference
+      localStorage.setItem("theme", isDarkMode ? "dark" : "light");
 
       // Change the logo based on the theme
       const liftrytePic = document.getElementById("LRPic");
       if (liftrytePic) {
-        liftrytePic.src = document.body.classList.contains("dark-mode")
+        liftrytePic.src = isDarkMode
           ? "images/white-wordmark.png"
           : "images/wordmark.png";
-      }
-
-      // Save user preference in localStorage
-      if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-      } else {
-        localStorage.setItem("theme", "light");
       }
     });
   } else {
