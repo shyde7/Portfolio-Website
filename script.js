@@ -1,5 +1,10 @@
+import { trackEvent } from "@vercel/analytics";
+
 // Ensure the DOM is fully loaded before running any code
 document.addEventListener("DOMContentLoaded", () => {
+  // Track a page view event
+  trackEvent("page_view", { path: window.location.pathname });
+
   // Dark Mode Toggle
   const toggleButton = document.getElementById("dark-mode-toggle");
 
@@ -24,11 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Save user preference in localStorage
-      if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-      } else {
-        localStorage.setItem("theme", "light");
-      }
+      const newTheme = document.body.classList.contains("dark-mode")
+        ? "dark"
+        : "light";
+      localStorage.setItem("theme", newTheme);
+
+      // Track the dark mode toggle event
+      trackEvent("dark_mode_toggled", { newTheme });
     });
   } else {
     console.error("Dark mode toggle button not found");
@@ -45,6 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
           emailLink.textContent = "shyde04.contact@gmail.com";
           emailLink.href = "mailto:shyde04.contact@gmail.com";
           emailLink.classList.remove("fade-out");
+
+          // Track the email hover event
+          trackEvent("email_hover", { action: "show_email" });
         }, 300);
       });
 
@@ -54,6 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
           emailLink.textContent = "Email";
           emailLink.href = "#";
           emailLink.classList.remove("fade-out");
+
+          // Track the email hover event
+          trackEvent("email_hover", { action: "hide_email" });
         }, 300);
       });
     } else {
@@ -73,8 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
         window.addEventListener("resize", () => {
           if (window.innerWidth <= 700) {
             easterEgg.textContent = "Testing the responsiveness? Gotcha!";
+            trackEvent("easter_egg_triggered", { size: "mobile" });
           } else {
             easterEgg.textContent = "";
+            trackEvent("easter_egg_triggered", { size: "desktop" });
           }
         });
       }
@@ -84,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize on load
   window.addEventListener("load", checkWindowSize);
 
-  // Intialize on resize
+  // Initialize on resize
   window.addEventListener("resize", checkWindowSize);
 
   // Initialize Email Hover Effect
