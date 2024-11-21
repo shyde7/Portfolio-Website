@@ -34,9 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.error("Dark mode toggle button not found");
   }
-
-  document.body.style.backgroundColor = "red";
-
   // Email Hover Effect
   const changeEmailToTextOnHover = () => {
     const emailLink = document.querySelector("#email2 a");
