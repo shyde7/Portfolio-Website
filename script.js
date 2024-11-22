@@ -1,12 +1,5 @@
-import { trackEvent } from "@vercel/analytics";
-
 // Ensure the DOM is fully loaded before running any code
 document.addEventListener("DOMContentLoaded", () => {
-  trackEvent("site_access", {
-    path: window.location.pathname,
-    referrer: document.referrer,
-    timestamp: new Date().toISOString(),
-  })
 
   console.log("DOM is fully loaded");
   // Dark Mode Toggle
