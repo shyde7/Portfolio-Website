@@ -1,6 +1,5 @@
 // Ensure the DOM is fully loaded before running any code
 document.addEventListener("DOMContentLoaded", () => {
-
   console.log("DOM is fully loaded");
   // Dark Mode Toggle
   const toggleButton = document.getElementById("dark-mode-toggle");
@@ -79,6 +78,48 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   };
+
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  const phrases = [
+    "code!",
+    "learn new technology!",
+    "contribute to meaningful projects!",
+  ];
+
+  const typewriterElement = document.getElementById("typewriter");
+
+  let sleepTime = 80;
+
+  let curPhraseIndex = 0;
+
+  const iterateLoop = async () => {
+    while (true) {
+      let curWord = phrases[curPhraseIndex];
+
+      for (let i = 0; i < curWord.length; i++) {
+        typewriterElement.innerText = curWord.substring(0, i + 1);
+        await sleep(sleepTime);
+      }
+      await sleep(sleepTime * 10);
+
+      for (let i = curWord.length; i > 0; i--) {
+        typewriterElement.innerText = curWord.substring(0, i - 1);
+        await sleep(sleepTime);
+      }
+
+      await sleep(sleepTime * 6);
+
+      if (curPhraseIndex === phrases.length - 1) {
+        curPhraseIndex = 0;
+      } else {
+        curPhraseIndex++;
+      }
+    }
+  };
+  iterateLoop();
 
   // Initialize on load
   window.addEventListener("load", checkWindowSize);

@@ -49,6 +49,14 @@ body.dark-mode .name-color {
   color: #bb86fc;
 }
 
+body.dark-mode #cursor {
+  color: #bb86fc;
+}
+
+body.dark-mode #typewriter {
+  color: #bb86fc;
+}
+
 body.dark-mode .about {
   background-color: #1e1e1e;
 }

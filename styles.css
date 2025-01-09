@@ -173,13 +173,38 @@ a:active {
   transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
+.name:after {
+  content: "👋🏻";
+  font-size: 4rem;
+}
+
 .name:hover {
   transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
 .name-color {
   color: #0c66e4; /* Customize the color */
-  font-size: 6rem;
+  font-size: 5rem;
+}
+
+#typewriter {
+  color: #0c66e4;
+  font-weight: bold;
+}
+
+#cursor {
+  color: #0c66e4;
+  animation: blink 1s linear infinite;
+  font-size: 2.2rem;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 0%;
+  }
 }
 
 /* Professional summary */
