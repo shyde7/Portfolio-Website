@@ -342,6 +342,66 @@ a:active {
   transform: scale(1.05); /* Smooth zoom effect on hover */
 }
 
+.youtubeButton {
+  background-color: #f0f0f0; /* Light grey background for contrast */
+  color: #333; /* Darker text for readability */
+  padding: 10px 15px;
+  margin: 10px;
+  border-radius: 8px; /* Rounded corners */
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  cursor: pointer; /* Pointer cursor on hover */
+  border: none;
+}
+
+.youtubeButton:hover {
+  background-color: #cd201f; /* Change to primary blue on hover */
+  color: #fff; /* White text on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.video-container {
+  display: none;
+  position: fixed;
+  top: -25%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 80vw;
+  height: 80vh;
+  background-color: black;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border: #000;
+  border-width: 4px;
+
+  overflow: hidden;
+}
+.video-container.show {
+  z-index: 99;
+  opacity: 1;
+}
+
+.close-button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 8rem;
+  color: red;
+  background: none;
+  border: 1px;
+  border-color: red;
+  border-radius: 5%;
+  cursor: pointer;
+  z-index: 1000;
+}
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
 /* Fixed Contact Navigation on the Bottom Left */
 .contact-nav-left-fixed {
   position: fixed;

@@ -121,6 +121,27 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   iterateLoop();
 
+  const ytButton = document.getElementById("ytButton");
+
+  const closeButton = document.getElementById("close-video-button");
+  const videoContainer = document.getElementById("video-container");
+  // const youtubeIFrame = document.getElementById("youtube-video");
+
+  // ytButton.addEventListener("click", () =>
+  //   videoContainer.style.display = "block"; // Show the video container
+  //   youtubeIFrame.src += "&autoplay=1"; // Add autoplay when opened
+  // });
+
+  closeButton.addEventListener("click", () => {
+    videoContainer.style.display = "none"; // Hide the container
+    youtubeIFrame.src = youtubeIFrame.src.split("?")[0]; // Stop the video playback
+  });
+
+  ytButton.addEventListener("click", () => {
+    videoContainer.classList.add("show");
+    videoContainer.style.display = "block";
+  });
+
   // Initialize on load
   window.addEventListener("load", checkWindowSize);
 

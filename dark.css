@@ -45,6 +45,14 @@ body.dark-mode .name {
   color: #ffffff;
 }
 
+body.dark-mode .profSummary {
+  color: #ffffff;
+}
+
+body.dark-mode .easterEgg {
+  color: #ffffff;
+}
+
 body.dark-mode .name-color {
   color: #bb86fc;
 }
