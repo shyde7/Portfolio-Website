@@ -53,7 +53,6 @@ a:active {
 
 .project-title:hover {
   text-decoration: underline;
-  scale: 1.1;
 }
 
 .section-title h6:hover {
@@ -361,6 +360,17 @@ a:active {
   transform: scale(1.05); /* Slight zoom on hover */
 }
 
+.overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  z-index: 5000; /* Below the video container but above the page content */
+}
+
 .video-container {
   display: none;
   position: fixed;
@@ -375,6 +385,7 @@ a:active {
   transition: opacity 0.3s ease-in-out;
   border: #000;
   border-width: 4px;
+  z-index: 9999;
 
   overflow: hidden;
 }

@@ -132,14 +132,17 @@ document.addEventListener("DOMContentLoaded", () => {
   //   youtubeIFrame.src += "&autoplay=1"; // Add autoplay when opened
   // });
 
-  closeButton.addEventListener("click", () => {
-    videoContainer.style.display = "none"; // Hide the container
-    youtubeIFrame.src = youtubeIFrame.src.split("?")[0]; // Stop the video playback
-  });
+  const body = document.getElementById("body");
 
   ytButton.addEventListener("click", () => {
     videoContainer.classList.add("show");
     videoContainer.style.display = "block";
+  });
+
+  closeButton.addEventListener("click", () => {
+    videoContainer.style.display = "none"; // Hide the container
+
+    youtubeIFrame.src = youtubeIFrame.src.split("?")[0]; // Stop the video playback
   });
 
   // Initialize on load
