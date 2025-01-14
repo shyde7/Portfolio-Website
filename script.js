@@ -159,7 +159,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const commentsList = document.getElementById("comments-list");
 
   const loadComments = async () => {
-    const response = await fetch("http://localhost:5001/api/comments");
+    const response = await fetch(
+      "https://portfolio-backend-shyde-8fe15b171c93.herokuapp.com/api/comments"
+    );
     const comments = await response.json();
     commentsList.innerHTML = "";
 
@@ -179,11 +181,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const commentText = commentInput.value.trim();
 
     if (commentText) {
-      await fetch("http://localhost:5001/api/comments", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ commentText }),
-      });
+      await fetch(
+        "https://portfolio-backend-shyde-8fe15b171c93.herokuapp.com/api/comments",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ commentText }),
+        }
+      );
 
       commentInput.value = "";
       await loadComments();
