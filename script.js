@@ -153,4 +153,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize Email Hover Effect
   changeEmailToTextOnHover();
+
+  const commentInput = document.getElementById("comment-input");
+  const submitCommentBtn = document.getElementById("submit-comment-btn");
+  const commentsList = document.getElementById("comments-list");
+
+  const loadComments = async () => {
+    const response = await fetch("http://localhost:5001/api/comments");
+    const comments = await response.json();
+    commentsList.innerHTML = "";
+
+    comments.forEach((comment) => {
+      const commentItem = document.createElement("li");
+      const timeStamp = new Date(comment.timestamp).toLocaleDateString("en-US");
+      commentItem.innerHTML = `
+      <span style="margin-left: auto;">${comment.commentText}</span>
+      <span style = "float: right; font-weight: bold;"> ${timeStamp}</span>
+      
+    `;
+      commentsList.appendChild(commentItem);
+    });
+  };
+
+  submitCommentBtn.addEventListener("click", async () => {
+    const commentText = commentInput.value.trim();
+
+    if (commentText) {
+      await fetch("http://localhost:5001/api/comments", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ commentText }),
+      });
+
+      commentInput.value = "";
+      await loadComments();
+    } else {
+      alert("Please enter a comment before submitting.");
+    }
+  });
+
+  loadComments();
 });

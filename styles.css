@@ -711,7 +711,7 @@ iframe {
   color: #ffffff;
 }
 
-.btn {
+.commentBtn {
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
@@ -725,8 +725,105 @@ iframe {
   margin-top: 10px;
 }
 
-.btn:hover {
+.commentBtn:hover {
   background-color: #0c66e4; /* Darker blue on hover */
+}
+
+.delete-btn {
+ 
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: red;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.comment-section {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9; /* Light grey background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  max-width: 400px;
+  max-height: 600px;
+  top: 1000px;
+  margin-left: auto; /* Push it to the right */
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.comment-section h5 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: black;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+#submit-comment-btn {
+  margin-top: 10px;
+  background-color: #0c66e4; /* Button background */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#submit-comment-btn:hover {
+  background-color: #084298; /* Darker hover color */
+}
+
+#comment-display-section {
+  margin-top: 20px;
+}
+
+#comments-list {
+  list-style-type: none;
+  padding-left: 0;
+  color: black;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+#comments-list::-webkit-scrollbar {
+  width: 8px;
+  left: 4px;
+}
+
+#comments-list::-webkit-scrollbar-thumb {
+  background-color: #0c66e4;
+  border-radius: 4px;
+}
+
+#comments-list::-webkit-scrollbar-thumb:hover {
+  background-color: #084298;
+}
+
+.visitor-cmt-title {
+  color: black;
+}
+
+#comments-list li {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: black;
 }
 
 /* Media query for responsiveness */
