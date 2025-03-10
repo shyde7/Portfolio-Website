@@ -63,6 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const checkWindowSize = () => {
     const easterEgg = document.querySelector(".easterEgg");
 
+    const commentSection = document.getElementById("comment-section");
+
+
     if (easterEgg) {
       const isMobile = window.innerWidth <= 700;
 
@@ -76,6 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       }
+    }
+
+    if(isMobile){
+
     }
   };
 
