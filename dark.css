@@ -2,7 +2,7 @@
 
 /* When body has class 'dark-mode', these styles apply */
 body.dark-mode {
-  background-color: #121212;
+  background-color: #121212 !important;
   color: #ffffff;
 }
 
@@ -45,7 +45,23 @@ body.dark-mode .name {
   color: #ffffff;
 }
 
+body.dark-mode .profSummary {
+  color: #ffffff;
+}
+
+body.dark-mode .easterEgg {
+  color: #ffffff;
+}
+
 body.dark-mode .name-color {
+  color: #bb86fc;
+}
+
+body.dark-mode #cursor {
+  color: #bb86fc;
+}
+
+body.dark-mode #typewriter {
   color: #bb86fc;
 }
 
